@@ -96,10 +96,180 @@
 //     odd[i].Style.fontWeight = 'bold';
 // }
 
+//TRAVERSING THE DOM
+// var itemList = document.querySelector('#items');
+// parentNode is the applicable from the parent to child
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = 'red';
+// console.log(itemList.parentNode.parentNode.parentNode);
+
+//parentElement this is also same like parentNode
+// var itemList = document.querySelector('#items');
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = 'red';
+// console.log(itemList.parentElement.parentElement.parentElement);
+
+//childNodes It is directly applicable to child but in cocument have show text containt.
+// console.log(itemList.childNodes)
+
+//children This is same klike childNodes but here there is no text containt
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].textContent = 'hello';
+
+//firstChild It is useless because of the there is a braker like text containt
+// console.log(itemList.firstChild);
+
+//firstElementChild this is the useful of the document modification.
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'sriman';
+// itemList.firstElementChild.style.backgroundColor = 'lightblue';
+
+// newDiv.style.backgroundColor = 'lightblue';
+//lastChild It is useless because of the there is a braker like text containt
+// console.log(itemList.lastElementChild);
+
+//lastElementChild
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'hello 1';
+
+//nextSibling
+// console.log(itemList.nextSibling);
+
+//nextElementSibling
+// console.log(itemList.nextElementSibling);
+
+//previousSibling
+// console.log(itemList.previousSibling);
+
+//previousElementSibling
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color = 'green';
+
+// var parentElement = document.querySelector('.sriman');
+
+// Check if the element exists
+// if (parentElement) {
+//     // Create a new div element
+//     var newDiv = document.createElement('div');
+
+//     // Set some properties for the new div
+//     newDiv.textContent = 'adaka';
+
+//     // Add the "sriman" class to the new div
+//     newDiv.classList.add('phani');
+//     newDiv.id = "qwertyu"
+
+//     // Append the new div as a child to the existing div
+//     parentElement.appendChild(newDiv);
+// }
+
+//createElement
+//create a div
+// var newDiv = document.createElement('div');
+
+//add class
+// newDiv.className = 'hello';
+
+//add id
+// newDiv.id = 'hello 1';
+
+//add attr
+// newDiv.setAttribute('title', 'hello world');
+
+//create text node
+// var newDivText = document.createTextNode('hello world');
+
+//add text to div
+// newDiv.appendChild(newDivText);
+
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1')
+
+// console.log(newDiv);
+
+// container.insertBefore(newDiv, h1);
+
+//EVENTS
+// var button = document.getElementById('button').addEventListener('click', buttonClick);
+//at here call the below function 
+
+// onclick = "buttonClick(1)" This is old way of button clicked function
+//function buttonClick(e) {
+// console.log('Button Clicked ')
+// document.getElementById('header-title').textContent = 'changed';
+// document.querySelector('#main').style.backgroundColor = '#f4f4f4';
+
+//console.log(e.target); button details 
+// console.log(e.target.id); given id detils 
+// console.log(e.target.className); given class name 
+// console.log(e.target.classList); given class names list 
+
+// var output = document.getElementById('output');
+// output.innerHTML = '<h3>' + e.target.id + '</h3>'; This is output gives the id 
+
+// console.log(e.type); this is type of button
+
+// clint is the taken from the whole area 
+// console.log(e.clientX);
+// console.log(e.clientY);
+
+// offset is taken from only one element 
+// console.log(e.offsetX);
+// console.log(e.offsetY);
+
+//this is the buttons are alt ctrl shift click are not it shows 
+// console.log(e.altKey);
+// console.log(e.shiftKey);
+// console.log(e.ctrlKey);
+
+//};
+
+var button = document.getElementById('button');
+var box = document.getElementById('box');
+
+// button.addEventListener('click', runEvent);
+// button.addEventListener('dblclick', runEvent);
+// button.addEventListener('mousedown', runEvent);
+// button.addEventListener('mouseup', runEvent);
 
 
+// Those two are applicable for the whole div content 
+// box.addEventListener('mouseenter', runEvent);
+// box.addEventListener('mouseleave', runEvent);
+
+//Those two are applicable for the in side of the data 
+// box.addEventListener('mouseover', runEvent);
+// box.addEventListener('mouseout', runEvent);
+
+// box.addEventListener('mousemove', runEvent);
+
+var itemInput = document.querySelector('input[type="text"]');
+var form = document.querySelector('form');
+var select = document.querySelector('select');
+
+// itemInput.addEventListener('keydown', runEvent); 
+// itemInput.addEventListener('keyup', runEvent);
+// itemInput.addEventListener('keypress', runEvent);
+
+// itemInput.addEventListener('focus', runEvent); It is the focus of the input box when we are click in the box
+// itemInput.addEventListener('blur', runEvent); It is the blur of the input box when we are click outside of the box
+
+//itemInput.addEventListener('cut', runEvent); It is the to cut the content inside the input to cut
+//itemInput.addEventListener('paste', runEvent); It is the to cut the content inside the input to paste
+
+select.addEventListener('change', runEvent);
+select.addEventListener('input', runEvent);
 
 
+function runEvent(e) {
+    console.log('EVENT TYPE: ' + e.type);
+
+    // console.log(e.target.value);
+
+    // output.innerHTML = '<h3>mouseX: ' + e.offsetX + ' </h3><h3>moudeY: ' + e.offsetY + '</h3>'
+
+}
 
 
 

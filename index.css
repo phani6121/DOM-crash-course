@@ -44,3 +44,9 @@
     margin-right: 20px;
     padding: 10px 10px;
 }
+
+#button {
+    width: 96%;
+    margin-left: 1px;
+    margin-bottom: 20px;
+}
